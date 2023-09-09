@@ -1,8 +1,8 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const maxRecords = 151
-const limit = 10
+const maxRecords = 251
+const limit = 5
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -18,7 +18,39 @@ function convertPokemonToLi(pokemon) {
 
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
+                     
             </div>
+            
+           
+            <div id="pokeStatsContainer">
+            <h1>${pokemon.name} stats</h1>
+            <ol class="pokeStatsRef">
+            <li>HP:</li>
+            <li>ATK:</li>
+            <li>DEF:</li>
+            <li>SP.ATK:</li>
+            <li>SP.DEF:</li>
+            <li>SPD:</li>
+            <li>TOTAL:</li>
+            <li>WEIGHT:</li>
+            <li>HEIGHT:</li>
+            <li>BASE EXP:</li>
+            <li>ABILITIES:</li>
+            </ol>
+            <ol class="pokeStatsValue">
+            <li>${pokemon.hp}</li>
+            <li>${pokemon.atk}</li>
+            <li>${pokemon.def}</li>
+            <li>${pokemon.satk}</li>
+            <li>${pokemon.sdef}</li>
+            <li>${pokemon.spd}</li>
+            <li>${pokemon.hp + pokemon.atk + pokemon.def + pokemon.satk + pokemon.sdef + pokemon.spd}
+            <li>${pokemon.weight/10}kg</li>
+            <li>${pokemon.height/10}m</li>
+            <li>${pokemon.exp}</li>
+            <li style="text-transform: capitalize;">${pokemon.ability1}</li>
+            <li style="text-transform: capitalize;">${pokemon.ability2}</li>
+            </ol>           
         </li>
     `
 }
