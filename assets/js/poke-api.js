@@ -6,7 +6,6 @@ function convertPoke(pokemonDetail) {
     let idTransform = pokeId.toString().padStart(4, '0')
     pokemon.number = idTransform
     pokemon.name = pokemonDetail.name
-
     const types = pokemonDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
     pokemon.types = types
